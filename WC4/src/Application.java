@@ -3,23 +3,18 @@ import java.util.List;
 
 public class Application
 {
-    private final List<User> users;
+    private static final List<User> users = new ArrayList<>();
 
-    public Application()
+    public static List<User> getUsers()
     {
-        this.users = new ArrayList<>();
+        return Application.users;
     }
 
-    public List<User> getUsers()
-    {
-        return this.users;
-    }
-
-    public void registerUser(User user, Validator validator)
+    public static void registerUser(User user, Validator validator)
     {
         if(validator.isValid(user))
         {
-            this.users.add(user);
+            Application.users.add(user);
         }
     }
 }
