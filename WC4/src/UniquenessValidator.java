@@ -9,6 +9,6 @@ public class UniquenessValidator implements Validator<String>
                 return false;
             }
         }
-        return true
+        return true;
     }
 }
